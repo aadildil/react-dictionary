@@ -92,7 +92,16 @@ const Search = () => {
       </div>
 
       {loading&&<span className="loader"></span>}
-      {error && <p>Error: {error}</p>}
+      {
+      error && (
+        <div className="error-container"> 
+        <h2>{error.title}</h2>
+        <p>{error.message}</p>
+        <p>{error.resolution}</p>
+        </div>
+      )
+      
+      }
       {data.data ? (
         <div className="main">
           <h1>{data.data.data.word}</h1>
